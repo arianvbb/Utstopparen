@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include <Birds.hpp>
+#include "Birds.hpp"
 #include <array>
 
 inline const std::array<Bird, 5> Gråstein = 
@@ -55,7 +55,7 @@ inline const std::array<Bird, 1> Odins_minne =
 
 inline Bird spawnBird(int percent){
     // Percent will be 1 - 1000
-    if(percent == 1){
+    if(percent == 1000){
         return Odins_minne[0];
     }
     else if(percent >= 990){
@@ -71,6 +71,6 @@ inline Bird spawnBird(int percent){
         return Sølvfjær[rand() % 5];
     }
     else{
-        return Kongeblikk[rand() % 5];
+        return Gråstein[rand() % 5];
     }
 };
