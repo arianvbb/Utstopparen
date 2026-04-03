@@ -4,7 +4,7 @@
 
 unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
 std::mt19937 gen(seed);
-std::uniform_int_distribution NumChance(1, 1000);
+std::uniform_int_distribution NumChance(1, 10);
 
 inline std::tuple<std::string, int> Problem(){
     int Num1 = NumChance(gen);
