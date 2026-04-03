@@ -13,3 +13,13 @@ inline void Save(const Bird& bird){
         std::cout << "Couldn't open file.\n";
     }
 }
+
+inline void Clear(){
+    std::ofstream File;
+    File.open("Collection.txt", std::ios::trunc);
+
+    if(!File.is_open()){
+        std::cout << "Couldn't open file.\n";
+    }
+    File.close();
+}

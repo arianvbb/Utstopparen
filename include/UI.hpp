@@ -10,7 +10,8 @@ inline int MainMenu(int solved, int needed_solves){
     std::cout << "2. Løys et problem\n";
     std::cout << "3. Fang ein fugl (MINST 10 LØYSTE OPPGAVER)\n";
     std::cout << "4. Utstopp et fryst dyr\n";
-    std::cout << "5. HADE BRA\n";
+    std::cout << "5. Slett samling\n";
+    std::cout << "6. HADE BRA\n";
     std::cin >> user_choice;
     switch(user_choice){
         case 1: return 1; break;
@@ -18,6 +19,7 @@ inline int MainMenu(int solved, int needed_solves){
         case 3: return 3; break;
         case 4: return 4; break;
         case 5: return 5; break;
+        case 6: return 6; break;
         default: std::cout << "Ikkje et gyldig svar"; MainMenu(solved, needed_solves); break;
     }
 }

@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Spawning.hpp"
 #include "Problems.hpp"
-#include "Saving.hpp"
+#include "Saving&Del.hpp"
 #include "UI.hpp"
 
 std::uniform_int_distribution<int> Chance(1, 1000);
@@ -11,7 +11,7 @@ void CaptureBird(std::uniform_int_distribution<int>& dist);
 int main(){
 
     int solves = 0;
-    int needed_solves = 10;
+    int needed_solves = 3;
     bool game_state = true;
     do{
     switch(MainMenu(solves, needed_solves)){
@@ -36,7 +36,7 @@ int main(){
             }
         case 3: {
             if(solves >= needed_solves){
-                solves -= 10;
+                solves -= needed_solves;
                 CaptureBird(Chance);
             }
             else{
@@ -45,7 +45,11 @@ int main(){
             }
             break;
         }
-        case 5: game_state = false; break;
+        case 5: {
+            Clear();
+            break;
+        }
+        case 6: game_state = false; break;
         default: break;
     };
     }while(game_state == true);
@@ -54,10 +58,9 @@ int main(){
 
 void CaptureBird(std::uniform_int_distribution<int>& dist){
     int user_choice;
-
     int num = Chance(gen);
     auto bird = spawnBird(num);
-    std::cout << "Congrats, you caught a " << bird.Name << " which is a " << bird.Rarity << " in rarity, what do you wanna do?\n";
+    std::cout << "Grattis, du fange ein " << bird.Name << " som e ein " << bird.Rarity << " i sjeldenhet, ka ønske du å gjør me an?\n";
     std::cout << "1. Utstoppa an\n";
     std::cout << "2. Frysa an\n";
     std::cin >> user_choice;
