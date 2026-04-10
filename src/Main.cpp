@@ -3,10 +3,9 @@
 #include "Problems.hpp"
 #include "Saving&Del.hpp"
 #include "UI.hpp"
+#include "CaptureAndStuffing.hpp"
 
 std::uniform_int_distribution<int> Chance(1, 1000);
-
-void CaptureBird(std::uniform_int_distribution<int>& dist);
 
 int main(){
 
@@ -37,7 +36,8 @@ int main(){
         case 3: {
             if(solves >= needed_solves){
                 solves -= needed_solves;
-                CaptureBird(Chance);
+                int num = Chance(gen);
+                CaptureBird(num);
             }
             else{
                 std::cout << "Ikkje nok oppgaver løyst\n";
@@ -54,24 +54,4 @@ int main(){
     };
     }while(game_state == true);
     return 0;
-}
-
-void CaptureBird(std::uniform_int_distribution<int>& dist){
-    int user_choice;
-    int num = Chance(gen);
-    auto bird = spawnBird(num);
-    std::cout << "Grattis, du fange ein " << bird.Name << " som e ein " << bird.Rarity << " i sjeldenhet, ka ønske du å gjør me an?\n";
-    std::cout << "1. Utstoppa an\n";
-    std::cout << "2. Frysa an\n";
-    std::cin >> user_choice;
-    if(user_choice == 1){
-        if(UserTest() == true){
-        bird.State = "Utstoppa";
-        Save(bird);      
-    }
-    }
-    else if(user_choice == 2){
-        bird.State = "Fryst";
-        Save(bird);
-    }
 }

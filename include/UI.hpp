@@ -4,14 +4,14 @@
 
 inline int MainMenu(int solved, int needed_solves){
     int user_choice;
-    std::cout << "WELCOEM TO THE MAIN MENU\n";
-    std::cout << "Du har " << solved << " out of " << needed_solves << " som trengs for en ny fugl.\n";
-    std::cout << "1. Display collection\n";
+    std::cout << "***** UTSTOPPAREN *****\n";
+    std::cout << "Du har " << solved << "/" << needed_solves << " som trengs for en ny fugl.\n";
+    std::cout << "1. Vis samlingen\n";
     std::cout << "2. Løys et problem\n";
     std::cout << "3. Fang ein fugl (MINST 10 LØYSTE OPPGAVER)\n";
-    std::cout << "4. Utstopp et fryst dyr\n";
+    std::cout << "4. Utstopp ein fryst fuggel\n";
     std::cout << "5. Slett samling\n";
-    std::cout << "6. HADE BRA\n";
+    std::cout << "6. Farvel\n";
     std::cin >> user_choice;
     switch(user_choice){
         case 1: return 1; break;

@@ -17,7 +17,6 @@ inline void Save(const Bird& bird){
 inline void Clear(){
     std::ofstream File;
     File.open("Collection.txt", std::ios::trunc);
-
     if(!File.is_open()){
         std::cout << "Couldn't open file.\n";
     }
