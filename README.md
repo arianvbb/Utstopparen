@@ -1,4 +1,4 @@
-# ☑️ Utstopparen
+# ☑️ Utstopparen (Under development)
 This project is made strictly for fun and to further enhance my coding knowledge. This is my first time endulding in modular programming and it makes the process of debugging and testing 1000x easier. Something I will definetely be doing for my future projects.
 
 ## ❇️Features
@@ -26,3 +26,4 @@ It's also refreshed me on certain aspects of coding and taught me things such as
 3. Run the main.cpp file in the src folder.
 
 ## 🍿Video
+https://github.com/user-attachments/assets/c81019aa-ff42-4562-8831-2b1e6f4bcdac
